@@ -1,43 +1,43 @@
 <script lang="ts">
-    import video from '$lib/assets/videos/MIxLab App teaser.mp4';
+	import video from '$lib/assets/videos/MIxLab App teaser.mp4';
 
-    let fullName: string = '';
-    let emailAddress: string = '';
-    let formSubmitted: boolean = false;
-    let saving: boolean = false;
-    let errorMessage: string | null = null;
+	let fullName: string = '';
+	let emailAddress: string = '';
+	let formSubmitted: boolean = false;
+	let saving: boolean = false;
+	let errorMessage: string | null = null;
 
-    async function handleSubmit(): Promise<void> {
-        errorMessage = null;
-        saving = true;
+	async function handleSubmit(): Promise<void> {
+		errorMessage = null;
+		saving = true;
 
-        try {
-            const response = await fetch('/api/signup', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ fullName, emailAddress })
-            });
+		try {
+			const response = await fetch('/api/signup', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ fullName, emailAddress })
+			});
 
-            const result = await response.json();
+			const result = await response.json();
 
-            if (!response.ok) {
-                errorMessage = result.error || 'Failed to save signup';
-                console.error('[Client] Error response:', result);
-                saving = false;
-                return;
-            }
+			if (!response.ok) {
+				errorMessage = result.error || 'Failed to save signup';
+				console.error('[Client] Error response:', result);
+				saving = false;
+				return;
+			}
 
-            console.log('[Client] Signup successful:', result);
-            formSubmitted = true;
-            fullName = '';
-            emailAddress = '';
-        } catch (err) {
-            console.error('[Client] Unexpected error:', err);
-            errorMessage = (err as Error).message || 'Unexpected error';
-        } finally {
-            saving = false;
-        }
-    }
+			console.log('[Client] Signup successful:', result);
+			formSubmitted = true;
+			fullName = '';
+			emailAddress = '';
+		} catch (err) {
+			console.error('[Client] Unexpected error:', err);
+			errorMessage = (err as Error).message || 'Unexpected error';
+		} finally {
+			saving = false;
+		}
+	}
 </script>
 
 <div
@@ -100,8 +100,8 @@
 							</div>
 
 							{#if errorMessage}
-    <p class="mt-3 text-sm text-red-600">{errorMessage}</p>
-{/if}
+								<p class="mt-3 text-sm text-red-600">{errorMessage}</p>
+							{/if}
 
 							<!-- optionally show saving state on the submit button -->
 							<button
@@ -125,11 +125,11 @@
 
 							<div class="space-y-3 pt-4">
 								<a
-                                    href="https://github.com/jahazielllagas/mixlab-connect/releases/download/v0.3.25/mixlab-beta-0.3.25.apk"
-                                    class="w-full rounded-lg bg-gradient-to-r from-[#B4A063] to-[#DEDAA0] py-3 text-base font-bold text-gray-900 transition-colors hover:bg-[#d9bc5f] md:py-4 md:text-lg"
-                                >
-                                    Download
-                                </a>
+									href="https://github.com/jahazielllagas/mixlab-connect/releases/download/v0.3.25/mixlab-beta-0.3.25.apk"
+									class="block w-full rounded-lg bg-gradient-to-r from-[#B4A063] to-[#DEDAA0] py-3 text-center text-base font-bold text-gray-900 transition-colors hover:bg-[#d9bc5f] md:py-4 md:text-lg"
+								>
+									Download
+								</a>
 
 								<button
 									class="flex w-full items-center justify-center space-x-2 rounded-lg bg-gray-900 py-3 text-base font-semibold text-white transition-colors hover:bg-gray-800 md:py-4 md:text-lg"
