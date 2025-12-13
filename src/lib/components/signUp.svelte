@@ -38,16 +38,6 @@
             saving = false;
         }
     }
-
-    function downloadAPK(): void {
-        const link = document.createElement('a');
-        link.href = '/download/mixlab-beta-0.3.25.apk.apk';
-        link.download = 'mixlab-beta-0.3.25.apk';
-        link.setAttribute('target', '_blank');
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
 </script>
 
 <div
@@ -134,12 +124,12 @@
 							</p>
 
 							<div class="space-y-3 pt-4">
-								<button
-                                    on:click={downloadAPK}
+								<a
+                                    href="https://github.com/jahazielllagas/mixlab-connect/releases/download/v0.3.25/mixlab-beta-0.3.25.apk"
                                     class="w-full rounded-lg bg-gradient-to-r from-[#B4A063] to-[#DEDAA0] py-3 text-base font-bold text-gray-900 transition-colors hover:bg-[#d9bc5f] md:py-4 md:text-lg"
                                 >
                                     Download
-                                </button>
+                                </a>
 
 								<button
 									class="flex w-full items-center justify-center space-x-2 rounded-lg bg-gray-900 py-3 text-base font-semibold text-white transition-colors hover:bg-gray-800 md:py-4 md:text-lg"
