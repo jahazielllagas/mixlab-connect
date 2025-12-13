@@ -41,9 +41,12 @@
 
     function downloadAPK(): void {
         const link = document.createElement('a');
-        link.href = '/download/mixlab-alt-connect.apk';
-        link.download = 'mixlab-alt-connect.apk';
+        link.href = '/download/mixlab-beta-0.3.25.apk.apk';
+        link.download = 'mixlab-beta-0.3.25.apk';
+        link.setAttribute('target', '_blank');
+        document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link);
     }
 </script>
 
