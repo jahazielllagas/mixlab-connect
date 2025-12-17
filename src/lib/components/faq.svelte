@@ -27,6 +27,39 @@
 			question: 'When would be the official release fo the application?',
 			answer:
 				'The official release date will be announced soon. We are currently in open beta testing phase.'
+		},
+		{
+			question: 'Why the application is not function as always?',
+			answer:
+				'The Open Beta version is having trouble connecting to our server due to inconsistent which may result on server downtime. While its on open beta test phase we want to get some feedback from the user navigation before jumping on the functionality of the application.'
+		},
+		{
+			question: 'Plan on releasing the application on iOS?',
+			answer: 'Yes, we are planning to release the application on iOS the day during the release of official version of our application on Apple Store and Play Store.'
+		},
+		{
+			question: 'Is there a fee to use MixLab Connect during the beta?',
+			answer: 'No, MixLab Connect is completely free to use during the beta testing phase.'
+		},
+		{
+			question: 'How can I provide feedback during the beta?',
+			answer: 'We will rollout a Google Form Link in this page where you can provide feedback and report any issues you encounter while using the application.'
+		},
+		{
+			question: 'Is my data saved during the beta?',
+			answer: 'Yes and No, your data will be saved on our database server but we will plan to reset all data once we move from another so your data may be lost during the transition of server connection.'
+		},
+		{
+			question: 'Will there be updates during the beta phase?',
+			answer: 'Yes, we currently working on the updates while the open beta is online become more streamlined just to check the application feature.'
+		},
+		{
+			question: 'After the open beta, will my account and all the data submitted still be available?',
+			answer: "No, all accounts and data submitted during the open beta will be deleted once we move to the official release."
+		},
+		{
+			question: 'Who can I contact for support during the beta?',
+			answer: 'You can contact our support team via the email. "MixLab.Dev@gmail.com"'
 		}
 	];
 </script>
