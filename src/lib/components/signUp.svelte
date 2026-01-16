@@ -125,7 +125,7 @@
 
 							<div class="space-y-3 pt-4">
 								<a
-									href="https://expo.dev/artifacts/eas/xpoxpRoaLqBvVmKYA69udA.apk"
+									href="https://expo.dev/artifacts/eas/uYYPu9uqcmphg7XyLJkdsc.apk"
 									class="block w-full rounded-lg bg-gradient-to-r from-[#B4A063] to-[#DEDAA0] py-3 text-center text-base font-bold text-gray-900 transition-colors hover:bg-[#d9bc5f] md:py-4 md:text-lg"
 								>
 									Download
