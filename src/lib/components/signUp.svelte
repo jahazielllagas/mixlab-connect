@@ -6,6 +6,7 @@
 	let formSubmitted: boolean = false;
 	let saving: boolean = false;
 	let errorMessage: string | null = null;
+	let alreadyRegistered: boolean = false;
 
 	async function handleSubmit(): Promise<void> {
 		errorMessage = null;
@@ -28,6 +29,10 @@
 			}
 
 			console.log('[Client] Signup successful:', result);
+			
+			// Check if user was already registered
+			alreadyRegistered = result.alreadyRegistered || false;
+			
 			formSubmitted = true;
 			fullName = '';
 			emailAddress = '';
@@ -55,7 +60,6 @@
 			</div>
 
 			<!-- Mobile: Video Second (Desktop: Form Second) -->
-			<!-- Replace the signup form section with this: -->
 			<div class="order-1 flex justify-center px-0 md:px-8 lg:order-2 lg:justify-end">
 				<div
 					class="w-full max-w-md rounded-3xl border-4 border-black bg-white p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:p-10"
@@ -63,7 +67,7 @@
 					{#if !formSubmitted}
 						<!-- Original Form -->
 						<h2 class="mb-4 text-center text-4xl font-bold md:text-4xl">
-							Sign Up for<br />Open Beta
+							Sign Up for<br />Closed Beta
 						</h2>
 						<p class="mb-6 text-center text-xs text-gray-700 md:mb-8 md:text-sm">
 							Please fill out the form below to request access to our exclusive beta version of our
@@ -103,7 +107,6 @@
 								<p class="mt-3 text-sm text-red-600">{errorMessage}</p>
 							{/if}
 
-							<!-- optionally show saving state on the submit button -->
 							<button
 								type="submit"
 								disabled={saving}
@@ -116,11 +119,18 @@
 						<!-- Thank You Message -->
 						<div class="space-y-6 text-center">
 							<h2 class="text-3xl leading-tight font-bold md:text-4xl">
-								Thank you for signing up.
+								{#if alreadyRegistered}
+									Welcome back!
+								{:else}
+									Thank you for signing up.
+								{/if}
 							</h2>
 							<p class="text-sm leading-relaxed text-gray-700 md:text-base">
-								Please fill out the form below to request access to our exclusive beta version of
-								our application. We will process your request and send you a download link via email
+								{#if alreadyRegistered}
+									You're already registered for the beta. Download the MixLab Connect app using the links below.
+								{:else}
+									Your email will receive a download link to access the MixLab Connect in Play Store. Have you already signed up? Go to Play Store to download the app.
+								{/if}
 							</p>
 
 							<div class="space-y-3 pt-4">
@@ -131,7 +141,8 @@
 									Download
 								</a>
 
-								<button
+								<a
+									href="https://play.google.com/store/apps/details?id=com.valiares.mixlabaltapp"
 									class="flex w-full items-center justify-center space-x-2 rounded-lg bg-gray-900 py-3 text-base font-semibold text-white transition-colors hover:bg-gray-800 md:py-4 md:text-lg"
 								>
 									<svg
@@ -170,13 +181,8 @@
 											</g>
 										</g>
 									</svg>
-									<svg class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-										<path
-											d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.09997 22C7.78997 22.05 6.79997 20.68 5.95997 19.47C4.24997 17 2.93997 12.45 4.69997 9.39C5.56997 7.87 7.12997 6.91 8.81997 6.88C10.1 6.86 11.32 7.75 12.11 7.75C12.89 7.75 14.37 6.68 15.92 6.84C16.57 6.87 18.39 7.1 19.56 8.82C19.47 8.88 17.39 10.1 17.41 12.63C17.44 15.65 20.06 16.66 20.09 16.67C20.06 16.74 19.67 18.11 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"
-										/>
-									</svg>
-									<span>Coming Soon</span>
-								</button>
+									<span>Download in Play Store</span>
+								</a>
 							</div>
 						</div>
 					{/if}

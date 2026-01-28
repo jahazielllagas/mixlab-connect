@@ -40,11 +40,13 @@ export const POST: RequestHandler = async ({ request }) => {
         // check existence first
         const exists = await emailExists(normalizedEmail);
         if (exists) {
-            console.warn('[Server] Duplicate signup prevented for:', normalizedEmail);
-            return json(
-                { error: 'This email is already registered for the beta.' },
-                { status: 409 }
-            );
+            console.log('[Server] Email already registered, allowing access:', normalizedEmail);
+            // Return success to show download links for existing users
+            return json({ 
+                success: true, 
+                alreadyRegistered: true,
+                message: 'Email already registered. Showing download links.' 
+            });
         }
 
         // insert and request the inserted row back

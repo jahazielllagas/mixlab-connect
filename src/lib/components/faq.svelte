@@ -14,6 +14,16 @@
 				'MixLab Connect is an application where you can learn, create your legacy through recording, and rehearsal to your music needs.'
 		},
 		{
+			question: 'Is Closed Beta rollout already?',
+			answer:
+				'MixLab Connect Closed Beta is now available to download on website and Play Store for Android users. Only Android users can acces the application while iOS application was still on development phase'
+		},
+		{
+			question: 'How long will the Closed Beta test last',
+			answer:
+				'MixLab Connect Closed Beta test will last for 1 to 2 weeks depending on the feedback and issues encountered during the beta testing phase.'
+		},
+		{
 			question: 'Will it gonna be available on Google Play Store & Apple Store?',
 			answer:
 				'Yes, MixLab Connect will be available on both Google Play Store and Apple App Store once the official release is completed.'
